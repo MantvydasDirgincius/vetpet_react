@@ -2,7 +2,7 @@ import './button.css';
 
 function Button(props) {
   return (
-    <button onClick={() => props.onClick(props.id)} className={props.full ? 'btnFull' : 'btn'}>
+    <button onClick={props.onClick} className={props.full ? 'btnFull' : 'btn'}>
       {props.children}
     </button>
   );
