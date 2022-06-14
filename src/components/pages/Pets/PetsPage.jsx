@@ -1,5 +1,9 @@
 function PetsPage() {
-  return <div>PetsPage</div>;
+  return (
+    <div>
+      <h1>PetsPage</h1>
+    </div>
+  );
 }
 
 export default PetsPage;

@@ -1,0 +1,16 @@
+.btnFull {
+  padding: 8px 25px;
+  background-color: #fbd400;
+  border-radius: 5px;
+  border: none;
+  color: white;
+}
+
+.btn {
+  padding: 8px 25px;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid #fbd400;
+  color: #fbd400;
+}
+/*# sourceMappingURL=button.css.map */
