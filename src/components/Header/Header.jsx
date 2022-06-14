@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import '../Header/Header.css';
 
 function Header() {
@@ -6,8 +7,8 @@ function Header() {
       <div className='header'>
         <img src={'image/logo.png'} alt='vetbee logo' />
         <nav className='nav'>
-          <a href='index.html'>Pets</a>
-          <a href='medication.html'>Medications</a>
+          <NavLink to='/pets'>Pets </NavLink>
+          <NavLink to='/medication'>Medications</NavLink>
         </nav>
       </div>
     </header>
