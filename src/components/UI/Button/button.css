@@ -4,6 +4,7 @@
   border-radius: 5px;
   border: none;
   color: white;
+  margin: 0 2px;
 }
 
 .btn {
@@ -12,5 +13,6 @@
   border-radius: 5px;
   border: 1px solid #fbd400;
   color: #fbd400;
+  margin: 0 2px;
 }
 /*# sourceMappingURL=button.css.map */
