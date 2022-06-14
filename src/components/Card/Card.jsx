@@ -7,7 +7,7 @@ function Card({ title, sub1, sub2, btn, id, onClick }) {
       <h2 className='cardTitle'>{title}</h2>
       <p>{sub1}</p>
       <p>{sub2}</p>
-      {btn.length === 0 ? (
+      {btn === undefined ? (
         ''
       ) : (
         <div>
