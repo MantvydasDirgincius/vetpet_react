@@ -6,11 +6,11 @@ import { useParams } from 'react-router-dom';
 import Card from '../../Card/Card';
 import Button from '../../UI/Button/Button';
 import styles from './SoloPet.module.scss';
-function SoloPet(props) {
+function SoloPet() {
   const [logs, setLogs] = useState([]);
 
   const { id, name } = useParams();
-  console.log(id, name);
+
   useEffect(() => {
     getLogs(id);
   }, [id]);
@@ -18,7 +18,7 @@ function SoloPet(props) {
   async function getLogs(id) {
     const resp = await fetch(`https://glittery-dull-snickerdoodle.glitch.me/v1/logs/${id}`);
     const data = await resp.json();
-    console.log('data ===', data);
+
     setLogs(data);
   }
   return (
@@ -44,7 +44,13 @@ function SoloPet(props) {
       ) : (
         <div className='grid'>
           {logs.map((obj, i) => (
-            <Card key={i} title={obj.status} sub1={obj.description} sub2={obj.dob} id={obj.id} />
+            <Card
+              key={i}
+              title={obj.status}
+              sub1={obj.description}
+              sub2={new Date(obj.dob).toDateString()}
+              id={obj.id}
+            />
           ))}
         </div>
       )}

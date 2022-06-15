@@ -40,7 +40,7 @@ function PetsPage() {
           <Card
             key={i}
             title={obj.name}
-            sub1={obj.dob}
+            sub1={new Date(obj.dob).toDateString()}
             sub2={obj.client_email}
             id={obj.id}
             btn={[
