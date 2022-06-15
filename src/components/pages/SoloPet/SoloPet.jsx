@@ -29,7 +29,7 @@ function SoloPet(props) {
           <Link to='/addPres'>
             <Button full>ADD PRESSCRIPTIONS</Button>
           </Link>
-          <Link to='/addLogs'>
+          <Link to={`/addLogs/${id}`}>
             <Button full>ADD LOGS</Button>
           </Link>
         </div>

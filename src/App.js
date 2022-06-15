@@ -8,6 +8,7 @@ import MedicationsPage from './components/pages/Medications/MedicationsPage';
 import PetsPage from './components/pages/Pets/PetsPage';
 import AddMedsPage from './components/pages/AddMeds/AddMedsPage';
 import SoloPet from './components/pages/SoloPet/SoloPet';
+import AddLogsPage from './components/pages/AddLogs/AddLogsPage';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
       <Switch>
         <Route path='/pets/:id/:name'>
           <SoloPet />
+        </Route>
+        <Route path='/addLogs/:id'>
+          <AddLogsPage />
         </Route>
         <Route path='/addPets'>
           <AddPetsPage />
