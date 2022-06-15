@@ -1,4 +1,3 @@
-import './PetsPage.css';
 import Button from '../../UI/Button/Button.jsx';
 import { useEffect, useState } from 'react';
 import Card from '../../Card/Card';
