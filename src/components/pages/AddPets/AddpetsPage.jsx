@@ -1,6 +1,6 @@
+import styles from './addPets.module.scss';
 import Button from '../../UI/Button/Button.jsx';
 import { Link } from 'react-router-dom';
-import './addPets.css';
 import Input from '../../UI/Input/Input.jsx';
 import { useState } from 'react';
 function AddPetsPage() {
@@ -37,7 +37,7 @@ function AddPetsPage() {
 
   function sendForm(e) {
     e.preventDefault();
-    console.log('veikia');
+
     if (name === '' || dob === '' || email === '') {
       return;
     }
@@ -51,7 +51,7 @@ function AddPetsPage() {
   }
 
   return (
-    <main className={` ${replace ? 'addPets container' : 'container'}`}>
+    <main className={` ${replace ? `${styles.addPets} container` : 'container'}`}>
       <section className='hero'>
         <h1>Add Pets</h1>
         <Link to='/'>
@@ -59,16 +59,10 @@ function AddPetsPage() {
         </Link>
       </section>
       {!replace ? (
-        <form onSubmit={(e) => sendForm(e)} className='addForm'>
+        <form onSubmit={(e) => sendForm(e)} className={styles.addForm}>
           <div>
             <label htmlFor='name'>Name</label>
-            <Input
-              onChange={(e) => handleInput(e, setName)}
-              value={name}
-              type='text'
-              name='name'
-              placeholder='Name'
-            />
+            <Input onChange={(e) => handleInput(e, setName)} value={name} type='text' name='name' placeholder='Name' />
 
             <label htmlFor='data'>Date of birth</label>
             <Input
@@ -93,10 +87,10 @@ function AddPetsPage() {
           </Button>
         </form>
       ) : (
-        <div className='addMore'>
+        <div className={styles.addMore}>
           <h2>Pet added successfully </h2>
           <p>Do you want to add another one?</p>
-          <div className='answerBtn'>
+          <div className={styles.answerBtn}>
             <Button full onClick={setingReplace}>
               YES
             </Button>

@@ -22,3 +22,11 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 15px;
 }
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
