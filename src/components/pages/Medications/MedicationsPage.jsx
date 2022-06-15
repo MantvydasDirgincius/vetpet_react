@@ -5,7 +5,7 @@ function MedicationsPage() {
   const [medData, setMedData] = useState([]);
 
   async function getMed() {
-    const resp = await fetch('./medsdb.json');
+    const resp = await fetch('https://glittery-dull-snickerdoodle.glitch.me/v1/meds/');
     const data = await resp.json();
 
     setMedData(data);
