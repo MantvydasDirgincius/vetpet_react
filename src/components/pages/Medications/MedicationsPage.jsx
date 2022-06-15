@@ -1,6 +1,7 @@
 import Button from '../../UI/Button/Button.jsx';
 import { useEffect, useState } from 'react';
 import Card from '../../Card/Card';
+import { Link } from 'react-router-dom';
 function MedicationsPage() {
   const [medData, setMedData] = useState([]);
 
@@ -19,7 +20,9 @@ function MedicationsPage() {
       <div className='hero'>
         <h1>Medications</h1>
         <div>
-          <Button full>ADD MEDICATIONS</Button>
+          <Link to='/addMeds'>
+            <Button full>ADD MEDICATIONS</Button>
+          </Link>
         </div>
       </div>
       <div className='grid'>

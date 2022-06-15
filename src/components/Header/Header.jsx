@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import '../Header/Header.css';
+import styles from './Header.module.scss';
 
 function Header() {
   return (
-    <header className='head'>
-      <div className='header'>
+    <header className={styles.head}>
+      <div className={styles.header}>
         <img src={'image/logo.png'} alt='vetbee logo' />
-        <nav className='nav'>
+        <nav className={styles.nav}>
           <NavLink to='/pets'>Pets </NavLink>
           <NavLink to='/medication'>Medications</NavLink>
         </nav>

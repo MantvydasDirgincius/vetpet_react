@@ -11,13 +11,18 @@ function PetsPage() {
     const data = await resp.json();
     setPetsData(data);
   }
-
   useEffect(() => {
     fetchPets();
   }, []);
 
-  function clicked(id) {
-    console.log(id);
+  async function deleteById(id) {
+    const resp = await fetch(`https://glittery-dull-snickerdoodle.glitch.me/v1/pets/${id}`, {
+      method: 'DELETE',
+    });
+    const data = await resp.json();
+    if (data.changes === 1) {
+      fetchPets();
+    }
   }
 
   return (
@@ -31,17 +36,16 @@ function PetsPage() {
         </div>
       </div>
       <div className='grid'>
-        {petsData.map((obj) => (
+        {petsData.map((obj, i) => (
           <Card
-            key={obj.id}
+            key={i}
             title={obj.name}
-            onClick={clicked}
             sub1={obj.dob}
             sub2={obj.client_email}
             id={obj.id}
             btn={[
-              { full: true, text: 'VIEW LOG' },
-              { full: false, text: 'DELETE' },
+              { full: true, text: 'VIEW LOG', link: true, name: obj.name },
+              { full: false, text: 'DELETE', onDelete: deleteById },
             ]}
           />
         ))}
