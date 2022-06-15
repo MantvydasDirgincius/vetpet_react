@@ -8,7 +8,7 @@ function PetsPage() {
   const [petsData, setPetsData] = useState([]);
 
   async function fetchPets() {
-    const resp = await fetch('petsdb.json');
+    const resp = await fetch('https://glittery-dull-snickerdoodle.glitch.me/v1/pets');
     const data = await resp.json();
     setPetsData(data);
   }

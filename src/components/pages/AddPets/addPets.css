@@ -1,14 +1,9 @@
-.formSection {
-  margin: 0 auto;
-  width: 700px;
-}
-
 .addForm {
   background-color: #e3e3e3;
   padding: 30px;
-  min-width: 600px;
+  max-width: 600px;
   border-radius: 10px;
-  min-height: 450px;
+  max-height: 450px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,6 +17,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 0 auto;
 }
 
 .addForm label {
@@ -32,6 +28,7 @@
 
 .addForm input {
   padding: 10px;
+  width: 100%;
 }
 
 .addForm textarea {

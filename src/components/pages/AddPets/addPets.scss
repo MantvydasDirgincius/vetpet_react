@@ -1,43 +1,44 @@
-.formSection{
-    margin: 0 auto;
-    width: 700px;
-}
 .addForm {
-    background-color: rgb(227, 227, 227);
-    padding: 30px;
-    min-width: 600px;
-    border-radius: 10px;
-    min-height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    label {
-      font-weight: 400;
-      color: rgb(99, 109, 112);
-      font-size: 20px;
-    }
-    input {
-      padding: 10px;
-    }
-    textarea {
-      padding: 10px;
-    }
-     * {
-      display: block;
-      width: 100%;
-      margin-bottom: 10px;
-    }
-     button {
-      margin-top: auto;
-      width: 40%;
-      padding: 10px 25px;
-      
-    }
-     select {
-      padding: 10px;
-      color: rgb(99, 109, 112);
-    }
+  background-color: rgb(227, 227, 227);
+  padding: 30px;
+  max-width: 600px;
+  border-radius: 10px;
+  max-height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  label {
+    font-weight: 400;
+    color: rgb(99, 109, 112);
+    font-size: 20px;
   }
-  
-  
+
+  input {
+    padding: 10px;
+    width: 100%;
+  }
+
+  textarea {
+    padding: 10px;
+  }
+
+  * {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  button {
+    margin-top: auto;
+    width: 40%;
+    padding: 10px 25px;
+  }
+
+  select {
+    padding: 10px;
+    color: rgb(99, 109, 112);
+  }
+}
