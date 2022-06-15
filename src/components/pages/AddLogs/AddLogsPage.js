@@ -1,6 +1,6 @@
 import styles from './addLogs.module.scss';
 import Button from '../../UI/Button/Button.jsx';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Input from '../../UI/Input/Input.jsx';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
