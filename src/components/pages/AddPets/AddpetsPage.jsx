@@ -7,6 +7,7 @@ function AddPetsPage() {
   const [name, setName] = useState('');
   const [dob, setDob] = useState('');
   const [email, setEmail] = useState('');
+  const [replace, setReplace] = useState(false);
 
   function handleInput(e, setinput) {
     setinput(e.target.value);
@@ -28,8 +29,10 @@ function AddPetsPage() {
     };
     const resp = await fetch('https://glittery-dull-snickerdoodle.glitch.me/v1/pets', options);
     const data = await resp.json();
-    if (data.changes === 1) {
-    }
+    if (data.changes === 1) setingReplace();
+  }
+  function setingReplace() {
+    setReplace((previous) => !previous);
   }
 
   function sendForm(e) {
@@ -48,40 +51,61 @@ function AddPetsPage() {
   }
 
   return (
-    <main className='container'>
+    <main className={` ${replace ? 'addPets container' : 'container'}`}>
       <section className='hero'>
         <h1>Add Pets</h1>
         <Link to='/'>
           <Button full>Back to pets</Button>
         </Link>
       </section>
-      <form onSubmit={(e) => sendForm(e)} className='addForm'>
-        <div>
-          <label htmlFor='name'>Name</label>
-          <Input onChange={(e) => handleInput(e, setName)} value={name} type='text' name='name' placeholder='Name' />
+      {!replace ? (
+        <form onSubmit={(e) => sendForm(e)} className='addForm'>
+          <div>
+            <label htmlFor='name'>Name</label>
+            <Input
+              onChange={(e) => handleInput(e, setName)}
+              value={name}
+              type='text'
+              name='name'
+              placeholder='Name'
+            />
 
-          <label htmlFor='data'>Date of birth</label>
-          <Input
-            onChange={(e) => handleInput(e, setDob)}
-            value={dob}
-            name='data'
-            placeholder='Date of birth'
-            type='text'
-          />
+            <label htmlFor='data'>Date of birth</label>
+            <Input
+              onChange={(e) => handleInput(e, setDob)}
+              value={dob}
+              name='data'
+              placeholder='Date of birth'
+              type='text'
+            />
 
-          <label htmlFor='email'>Client email</label>
-          <input
-            onChange={(e) => handleInput(e, setEmail)}
-            value={email}
-            type='email'
-            name='email'
-            placeholder='@email.com'
-          />
+            <label htmlFor='email'>Client email</label>
+            <input
+              onChange={(e) => handleInput(e, setEmail)}
+              value={email}
+              type='email'
+              name='email'
+              placeholder='@email.com'
+            />
+          </div>
+          <Button type='submit' full>
+            Add pet
+          </Button>
+        </form>
+      ) : (
+        <div className='addMore'>
+          <h2>Pet added successfully </h2>
+          <p>Do you want to add another one?</p>
+          <div className='answerBtn'>
+            <Button full onClick={setingReplace}>
+              YES
+            </Button>
+            <Link to='/'>
+              <Button>NO</Button>
+            </Link>
+          </div>
         </div>
-        <Button type='submit' full>
-          Add pet
-        </Button>
-      </form>
+      )}
     </main>
   );
 }
