@@ -10,7 +10,9 @@ function PetsPage() {
   const [inputValue, setInputValue] = useState('');
 
   function handleInput() {
-    const filtered = petsData.filter((pObj) => pObj.name.toLowerCase().includes(inputValue.toLowerCase()));
+    const filtered = petsData.filter((pObj) =>
+      pObj.name.toLowerCase().includes(inputValue.toLowerCase())
+    );
     setVisiblePets(filtered);
   }
 
@@ -34,6 +36,7 @@ function PetsPage() {
     });
     const data = await resp.json();
     if (data.changes === 1) {
+      // pasidaryt be fetch
       fetchPets();
     }
   }
@@ -43,6 +46,7 @@ function PetsPage() {
       <div className='hero'>
         <h1>PetsPage</h1>
         <Input
+          className='search'
           type='text'
           placeholder='Search'
           onChange={(e) => setInputValue(e.target.value)}

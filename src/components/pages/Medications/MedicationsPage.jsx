@@ -11,7 +11,7 @@ function MedicationsPage() {
   async function getMed() {
     const resp = await fetch('https://glittery-dull-snickerdoodle.glitch.me/v1/meds/');
     const data = await resp.json();
-    setMedData(data);
+    setMedData(data.filter((obj) => obj.name !== null || obj.description !== null));
     setVisibleMeds(data);
   }
   useEffect(() => {
@@ -37,6 +37,7 @@ function MedicationsPage() {
       <div className='hero'>
         <h1>Medications</h1>
         <Input
+          className='search'
           type='text'
           placeholder='Search'
           onChange={(e) => setInputValue(e.target.value)}
